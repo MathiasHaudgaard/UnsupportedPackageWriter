@@ -1,0 +1,9 @@
+c:\users\mathias\documents\visual studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Debug\netcoreapp1.1\UnsupportedPackageWriter.deps.json
+c:\users\mathias\documents\visual studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Debug\netcoreapp1.1\UnsupportedPackageWriter.runtimeconfig.json
+c:\users\mathias\documents\visual studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Debug\netcoreapp1.1\UnsupportedPackageWriter.runtimeconfig.dev.json
+c:\users\mathias\documents\visual studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Debug\netcoreapp1.1\UnsupportedPackageWriter.dll
+c:\users\mathias\documents\visual studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\Debug\netcoreapp1.1\UnsupportedPackageWriter.csprojResolveAssemblyReference.cache
+c:\users\mathias\documents\visual studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\Debug\netcoreapp1.1\UnsupportedPackageWriter.AssemblyInfo.cs
+c:\users\mathias\documents\visual studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Debug\netcoreapp1.1\UnsupportedPackageWriter.pdb
+c:\users\mathias\documents\visual studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\Debug\netcoreapp1.1\UnsupportedPackageWriter.dll
+c:\users\mathias\documents\visual studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\Debug\netcoreapp1.1\UnsupportedPackageWriter.pdb

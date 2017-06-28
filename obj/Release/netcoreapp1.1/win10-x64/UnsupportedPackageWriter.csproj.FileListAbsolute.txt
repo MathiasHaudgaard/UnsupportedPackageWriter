@@ -1,0 +1,11 @@
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\release\netcoreapp1.1\win10-x64\hostpolicy.dll
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\release\netcoreapp1.1\win10-x64\hostfxr.dll
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\release\netcoreapp1.1\win10-x64\UnsupportedPackageWriter.exe
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\release\netcoreapp1.1\win10-x64\UnsupportedPackageWriter.deps.json
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\release\netcoreapp1.1\win10-x64\UnsupportedPackageWriter.runtimeconfig.json
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\release\netcoreapp1.1\win10-x64\UnsupportedPackageWriter.runtimeconfig.dev.json
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\release\netcoreapp1.1\win10-x64\UnsupportedPackageWriter.dll
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\release\netcoreapp1.1\win10-x64\UnsupportedPackageWriter.pdb
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\release\netcoreapp1.1\win10-x64\UnsupportedPackageWriter.AssemblyInfo.cs
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\release\netcoreapp1.1\win10-x64\UnsupportedPackageWriter.dll
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\release\netcoreapp1.1\win10-x64\UnsupportedPackageWriter.pdb

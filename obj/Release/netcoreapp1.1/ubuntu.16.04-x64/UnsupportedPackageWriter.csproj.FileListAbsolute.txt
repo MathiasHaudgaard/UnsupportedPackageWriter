@@ -1,0 +1,11 @@
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\ubuntu.16.04-x64\libhostpolicy.so
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\ubuntu.16.04-x64\libhostfxr.so
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\ubuntu.16.04-x64\UnsupportedPackageWriter
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\ubuntu.16.04-x64\UnsupportedPackageWriter.deps.json
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\ubuntu.16.04-x64\UnsupportedPackageWriter.runtimeconfig.json
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\ubuntu.16.04-x64\UnsupportedPackageWriter.runtimeconfig.dev.json
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\ubuntu.16.04-x64\UnsupportedPackageWriter.dll
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\ubuntu.16.04-x64\UnsupportedPackageWriter.pdb
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\Release\netcoreapp1.1\ubuntu.16.04-x64\UnsupportedPackageWriter.AssemblyInfo.cs
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\Release\netcoreapp1.1\ubuntu.16.04-x64\UnsupportedPackageWriter.dll
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\Release\netcoreapp1.1\ubuntu.16.04-x64\UnsupportedPackageWriter.pdb

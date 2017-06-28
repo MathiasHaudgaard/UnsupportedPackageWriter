@@ -1,0 +1,8 @@
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\UnsupportedPackageWriter.deps.json
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\UnsupportedPackageWriter.runtimeconfig.json
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\UnsupportedPackageWriter.runtimeconfig.dev.json
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\UnsupportedPackageWriter.dll
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\bin\Release\netcoreapp1.1\UnsupportedPackageWriter.pdb
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\Release\netcoreapp1.1\UnsupportedPackageWriter.AssemblyInfo.cs
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\Release\netcoreapp1.1\UnsupportedPackageWriter.dll
+C:\Users\Mathias\Documents\Visual Studio 2017\Projects\UnsupportedPackageWriter\UnsupportedPackageWriter\obj\Release\netcoreapp1.1\UnsupportedPackageWriter.pdb
