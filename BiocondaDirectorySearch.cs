@@ -14,19 +14,17 @@ namespace UnsupportedPackageWriter
     class BiocondaDirectorySearch
     {
 
-        public List<string> homePageUrlList { get; }
 
-        public BiocondaDirectorySearch(string path)
+        public BiocondaDirectorySearch()
         {
-            homePageUrlList = new List<string>();
-            LookThroughYaml(path);
 
         }
 
 
-        private List<string> LookThroughYaml(string path)
+        public List<JObject> LookThroughYaml(string path)
         {
             int exceptionCounter = 0;
+            List<JObject> convertedYamlList = new List<JObject>();
             try
             {
                 //these two for loops searches through every meta.yaml file
@@ -49,7 +47,7 @@ namespace UnsupportedPackageWriter
                             }
 
                             JObject convertedYaml = JObject.Parse(sb.ToString());
-                            
+                            convertedYamlList.Add(convertedYaml);
                             
 
                         }
@@ -57,18 +55,6 @@ namespace UnsupportedPackageWriter
                         {
                             exceptionCounter++;
                         }
-                        
-
-                        /*string homeUrlfirst = yamlText.Substring(yamlText.IndexOf("home: ")+6);
-                        string homeUrltrimming = homeUrlfirst.Substring(homeUrlfirst.IndexOf("//") + 2);
-                        string homeUrlSecond = homeUrltrimming.Substring(0, homeUrltrimming.IndexOf("\n"));
-                        string homeUrlScdTrimming = homeUrlSecond.Replace("'","").Replace("\"","");
-
-                        homePageUrlList.Add(homeUrlScdTrimming);
-
-                        Console.Out.WriteLine(homeUrlScdTrimming);
-                        Console.ReadLine()*/
-                        
 
                     }
                 }
@@ -78,9 +64,8 @@ namespace UnsupportedPackageWriter
             {
                 Console.Out.WriteLine(e);
             }
-            Console.Out.WriteLine(exceptionCounter);
-            Console.ReadLine();
-            return homePageUrlList;
+           
+            return convertedYamlList;
         }
 
     }
