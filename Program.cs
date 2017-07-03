@@ -56,17 +56,15 @@ namespace UnsupportedPackageWriter
                 if (namesFromBiotools.Contains(pypiPackage.ToLower()))
                 {
                     listofPackagesinterceptingOnPyPiAndBiotools.Add(pypiPackage);
-                    Console.WriteLine(pypiPackage);
-                    Console.ReadLine();
                 }
             }
             //List<string> listOfPackagesNotIntersecting = bioToolsList.Except(biocondaList, new IdComparer()).ToList();
-            /*string csv = String.Join(",", listofPackagesinterceptingOnPyPiAndBiotools.ToArray());
+            string csv = String.Join(",", listofPackagesinterceptingOnPyPiAndBiotools.ToArray());
             Console.Out.WriteLine(Directory.GetCurrentDirectory());
             File.WriteAllText(Directory.GetCurrentDirectory() + "/../packages.csv", csv);
             Console.Out.WriteLine("Written file to: " + Directory.GetCurrentDirectory() + "/../packages.csv");
             Console.Out.WriteLine("Press any key to exit");
-            Console.ReadLine();*/
+            Console.ReadLine();
 
         }
 
