@@ -10,32 +10,37 @@ namespace UnsupportedPackageWriter
     class Program
     {
 
-
-
         static void Main(string[] args)
         {
             Console.Out.WriteLine("Retrieving packages from BioTools ...");
             BioToolsRetriever bioToolsRetriever = new BioToolsRetriever();
             List<JObject> bioToolsList = bioToolsRetriever.GetJsonObjectFromBioTools();
 
-            //BiocondaDirectorySearch bio = new BiocondaDirectorySearch();
-            //List<JObject> convertedYamlList = bio.LookThroughYaml("C:/Users/Mathias/bioconda-recipes/recipes");
+            Console.Out.WriteLine(bioToolsList.Count);
+            Console.ReadLine();
+
+            /*BiocondaDirectorySearch bio = new BiocondaDirectorySearch();
+            List<JObject> convertedYamlList = bio.LookThroughYaml("C:/Users/Mathias/bioconda-recipes/recipes");
 
             List<String> namesFromBiotools = new List<string>();
-            List<String> namesFromBioConda = new List<string>();
+            List<String> namesFromBioConda = new List<string>();*/
 
-            BioconductorScanner bioconductorScanner = new BioconductorScanner();
-            bioconductorScanner.ScanBioconductor();
+            
 
-            foreach (JObject jobject in bioToolsList)
+            /*foreach (JObject jobject in bioToolsList)
             {
                 namesFromBiotools.Add(jobject["id"].ToString().ToLower());
 
-            }
+            }*/
+
             /*foreach (JObject jobject in convertedYamlList)
             {
                 namesFromBioConda.Add(jobject["package"]["name"].ToString());
-            }*/
+            }
+            */
+            
+
+
         }
 
         public static List<String> GenerateListOfIntersectingPackagesBetweenCranAndBiotools(List<String> namesFromBiotools)
@@ -72,6 +77,49 @@ namespace UnsupportedPackageWriter
 
             return listofPackagesinterceptingOnPyPiAndBiotools;
         }
+
+        public static List<String> GenerateListOfIntersectingPackagesBetweenBioconductorAndBiotools(List<String> namesFromBiotools)
+        {
+            BioconductorScanner bioconductorScanner = new BioconductorScanner();
+            List<string> listOfAllBioconductorPackages = bioconductorScanner.ScanBioconductor();
+            List<string> listofPackagesinterceptingOnBioconductorAndBiotools = new List<string>();
+
+            foreach (string BioconductorPackage in listOfAllBioconductorPackages)
+            {
+               
+                if (namesFromBiotools.Contains(BioconductorPackage.ToLower()))
+                {
+                    listofPackagesinterceptingOnBioconductorAndBiotools.Add(BioconductorPackage);
+                }
+            }
+
+            return listofPackagesinterceptingOnBioconductorAndBiotools;
+        }
+
+        public static List<String> GenerateListOfIntersectingPackagesBetweenBioconductorAndBioconda(List<String> namesFromBioconda)
+        {
+            BioconductorScanner bioconductorScanner = new BioconductorScanner();
+            List<string> listOfAllBioconductorPackages = bioconductorScanner.ScanBioconductor();
+            List<string> listofPackagesinterceptingOnBioconductorAndBioconda = new List<string>();
+
+            foreach(string biocondaPackage in namesFromBioconda)
+            {
+                string tempBiocondaPackageName = biocondaPackage;
+
+                if (biocondaPackage.StartsWith("bioconductor-"))
+                {
+                     tempBiocondaPackageName = biocondaPackage.Substring(13);  
+                }
+
+                if (listOfAllBioconductorPackages.Contains(tempBiocondaPackageName.ToLower()))
+                {
+                    listofPackagesinterceptingOnBioconductorAndBioconda.Add(tempBiocondaPackageName);
+                }
+            }
+
+            return listofPackagesinterceptingOnBioconductorAndBioconda;
+        }
+
 
         public static void GenerateCSVFile(List<String> listOfPackages)
         {

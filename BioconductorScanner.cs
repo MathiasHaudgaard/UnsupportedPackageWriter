@@ -31,16 +31,14 @@ namespace UnsupportedPackageWriter
 
             HtmlDocument cranHtml = new HtmlDocument();
             cranHtml.LoadHtml(cranHtmlPage);
-            HtmlNodeCollection nodes = cranHtml.GetElementbyId("PageContent").SelectSingleNode("//div[last()]").SelectSingleNode("//table").SelectNodes("//a[@href]");
-            //System.IO.File.WriteAllText("C:/Users/Mathias/Desktop/bob.txt",cranHtml.GetElementbyId("PageContent").SelectSingleNode("//div[last()]").SelectSingleNode("//table").InnerHtml);
-            //Console.ReadLine();
+            string innerHtml = cranHtml.GetElementbyId("PageContent").SelectSingleNode("//div[last()]").SelectSingleNode("//table").InnerHtml;
+            HtmlDocument bioconductorListHtml = new HtmlDocument();
+            bioconductorListHtml.LoadHtml(innerHtml);
+            HtmlNodeCollection nodes = bioconductorListHtml.DocumentNode.SelectNodes("//a[@href]");
             
             foreach (var link in nodes)
             {
-
-                //listOfAllCranPackages.Add(link.InnerHtml);
-                Console.WriteLine(link.InnerHtml);
-                Console.ReadLine();
+                listOfAllCranPackages.Add(link.InnerHtml);
             }
 
             return listOfAllCranPackages;

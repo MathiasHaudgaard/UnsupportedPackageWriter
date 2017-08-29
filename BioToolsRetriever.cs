@@ -17,7 +17,7 @@ namespace UnsupportedPackageWriter
         public BioToolsRetriever()
         {
             packagesWithoutWebappServiceDatabase = new List<JObject>();
-            URL = "https://bio.tools/api/tool/?format=json&language=R&page=";
+            URL = "https://bio.tools/api/tool/?format=json&page=";
 
             
 
