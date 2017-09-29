@@ -16,29 +16,56 @@ namespace UnsupportedPackageWriter
             BioToolsRetriever bioToolsRetriever = new BioToolsRetriever();
             List<JObject> bioToolsList = bioToolsRetriever.GetJsonObjectFromBioTools();
 
-            Console.Out.WriteLine(bioToolsList.Count);
-            Console.ReadLine();
+            
 
-            /*BiocondaDirectorySearch bio = new BiocondaDirectorySearch();
-            List<JObject> convertedYamlList = bio.LookThroughYaml("C:/Users/Mathias/bioconda-recipes/recipes");
+            Console.Out.WriteLine(bioToolsList.Count);
+
+            BiocondaRetriever biocondaRetriever = new BiocondaRetriever();
+            List<String> biocondaList = biocondaRetriever.GenerateListAsync();
+            Console.Out.WriteLine(biocondaList.Count);
+
+
 
             List<String> namesFromBiotools = new List<string>();
-            List<String> namesFromBioConda = new List<string>();*/
+            List<Tuple<string, string>> namesFromBioConda = new List<Tuple<string, string>>();
 
             
 
-            /*foreach (JObject jobject in bioToolsList)
+            foreach (JObject jobject in bioToolsList)
             {
                 namesFromBiotools.Add(jobject["id"].ToString().ToLower());
-
-            }*/
-
-            /*foreach (JObject jobject in convertedYamlList)
-            {
-                namesFromBioConda.Add(jobject["package"]["name"].ToString());
             }
-            */
-            
+            Console.Out.WriteLine("CCAT exists in biotools: " + namesFromBiotools.Contains("ccat"));
+
+            string prefix;
+            foreach (String package in biocondaList)
+            {
+                prefix = "none";
+                string biocondaName = package.ToLower();
+                if(biocondaName.Equals("ccat"))
+                    Console.Out.WriteLine("CCAT exists in bioconda!!!");
+
+                if (biocondaName.StartsWith("bioconductor-"))
+                {
+                    biocondaName = biocondaName.Substring("bioconductor-".Length);
+                    prefix = "bioconductor";
+                }
+                else if (biocondaName.StartsWith("r-"))
+                {
+                    biocondaName = biocondaName.Substring("r-".Length);
+                    prefix = "r";
+                }
+                else if (biocondaName.StartsWith("perl-"))
+                {
+                    biocondaName = biocondaName.Substring("perl-".Length);
+                    prefix = "perl";
+                }
+
+
+                namesFromBioConda.Add(new Tuple<string,string>(biocondaName,prefix));
+            }
+
+            GenerateCSVFileFromTuple(GenerateListOfIntersectingPackagesBetweenBiocondaAndBiotools(namesFromBiotools, namesFromBioConda));
 
 
         }
@@ -120,6 +147,19 @@ namespace UnsupportedPackageWriter
             return listofPackagesinterceptingOnBioconductorAndBioconda;
         }
 
+        public static List<Tuple<string,string>> GenerateListOfIntersectingPackagesBetweenBiocondaAndBiotools(List<String> namesFromBiotools, List<Tuple<String,String>> namesFromBioconda)
+        {
+            List<Tuple<String, String>> intersectingPackages = new List<Tuple<string, string>>();
+            foreach(Tuple<String,String> tupleFromBioconda in namesFromBioconda)
+            {
+                if (namesFromBiotools.Contains(tupleFromBioconda.Item1)){
+                    intersectingPackages.Add(tupleFromBioconda);
+                }
+            }
+            Console.Out.WriteLine(intersectingPackages.Count);
+            return intersectingPackages;
+
+        }
 
         public static void GenerateCSVFile(List<String> listOfPackages)
         {
@@ -128,6 +168,20 @@ namespace UnsupportedPackageWriter
             File.WriteAllText(Directory.GetCurrentDirectory() + "/../packages.csv", csv);
             Console.Out.WriteLine("Written file to: " + Directory.GetCurrentDirectory() + "/../packages.csv");
             Console.Out.WriteLine("Press any key to exit");
+            Console.ReadLine();
+        }
+
+        public static void GenerateCSVFileFromTuple(List<Tuple<String,String>> listOfPackages)
+        {
+            string packages = String.Join(",", listOfPackages.Select(x => x.Item1.ToString()).ToArray());
+            string prefixes = String.Join(",", listOfPackages.Select(x => x.Item2.ToString()).ToArray());
+            Console.Out.WriteLine(Directory.GetCurrentDirectory());
+            File.WriteAllText(Directory.GetCurrentDirectory() + "/../packages.csv", packages);
+            Console.Out.WriteLine("Written file to: " + Directory.GetCurrentDirectory() + "/../packages.csv");
+            File.WriteAllText(Directory.GetCurrentDirectory() + "/../prefixes.csv", prefixes);
+            Console.Out.WriteLine("Written file to: " + Directory.GetCurrentDirectory() + "/../prefixes.csv");
+            Console.Out.WriteLine("Press any key to exit");
+
             Console.ReadLine();
         }
 
