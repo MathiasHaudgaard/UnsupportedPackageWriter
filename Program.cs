@@ -16,56 +16,17 @@ namespace UnsupportedPackageWriter
             BioToolsRetriever bioToolsRetriever = new BioToolsRetriever();
             List<JObject> bioToolsList = bioToolsRetriever.GetJsonObjectFromBioTools();
 
-            
-
-            Console.Out.WriteLine(bioToolsList.Count);
-
-            BiocondaRetriever biocondaRetriever = new BiocondaRetriever();
-            List<String> biocondaList = biocondaRetriever.GenerateListAsync();
-            Console.Out.WriteLine(biocondaList.Count);
-
-
-
             List<String> namesFromBiotools = new List<string>();
-            List<Tuple<string, string>> namesFromBioConda = new List<Tuple<string, string>>();
-
-            
 
             foreach (JObject jobject in bioToolsList)
             {
                 namesFromBiotools.Add(jobject["id"].ToString().ToLower());
-            }
-            Console.Out.WriteLine("CCAT exists in biotools: " + namesFromBiotools.Contains("ccat"));
-
-            string prefix;
-            foreach (String package in biocondaList)
-            {
-                prefix = "none";
-                string biocondaName = package.ToLower();
-                if(biocondaName.Equals("ccat"))
-                    Console.Out.WriteLine("CCAT exists in bioconda!!!");
-
-                if (biocondaName.StartsWith("bioconductor-"))
-                {
-                    biocondaName = biocondaName.Substring("bioconductor-".Length);
-                    prefix = "bioconductor";
-                }
-                else if (biocondaName.StartsWith("r-"))
-                {
-                    biocondaName = biocondaName.Substring("r-".Length);
-                    prefix = "r";
-                }
-                else if (biocondaName.StartsWith("perl-"))
-                {
-                    biocondaName = biocondaName.Substring("perl-".Length);
-                    prefix = "perl";
-                }
-
-
-                namesFromBioConda.Add(new Tuple<string,string>(biocondaName,prefix));
+                Console.Out.WriteLine(jobject["id"].ToString());
             }
 
-            GenerateCSVFileFromTuple(GenerateListOfIntersectingPackagesBetweenBiocondaAndBiotools(namesFromBiotools, namesFromBioConda));
+            GenerateCSVFile(GenerateListOfIntersectingPackagesBetweenCranAndBiotools(namesFromBiotools));
+
+
 
 
         }
@@ -183,6 +144,64 @@ namespace UnsupportedPackageWriter
             Console.Out.WriteLine("Press any key to exit");
 
             Console.ReadLine();
+        }
+
+        public static void GenerateMappingBetweenBiocondaAndBiotools()
+        {
+            Console.Out.WriteLine("Retrieving packages from BioTools ...");
+            BioToolsRetriever bioToolsRetriever = new BioToolsRetriever();
+            List<JObject> bioToolsList = bioToolsRetriever.GetJsonObjectFromBioTools();
+
+
+
+            Console.Out.WriteLine(bioToolsList.Count);
+
+            BiocondaRetriever biocondaRetriever = new BiocondaRetriever();
+            List<String> biocondaList = biocondaRetriever.GenerateListAsync();
+            Console.Out.WriteLine(biocondaList.Count);
+
+
+
+            List<String> namesFromBiotools = new List<string>();
+            List<Tuple<string, string>> namesFromBioConda = new List<Tuple<string, string>>();
+
+
+
+            foreach (JObject jobject in bioToolsList)
+            {
+                namesFromBiotools.Add(jobject["id"].ToString().ToLower());
+            }
+            Console.Out.WriteLine("CCAT exists in biotools: " + namesFromBiotools.Contains("ccat"));
+
+            string prefix;
+            foreach (String package in biocondaList)
+            {
+                prefix = "none";
+                string biocondaName = package.ToLower();
+                if (biocondaName.Equals("ccat"))
+                    Console.Out.WriteLine("CCAT exists in bioconda!!!");
+
+                if (biocondaName.StartsWith("bioconductor-"))
+                {
+                    biocondaName = biocondaName.Substring("bioconductor-".Length);
+                    prefix = "bioconductor";
+                }
+                else if (biocondaName.StartsWith("r-"))
+                {
+                    biocondaName = biocondaName.Substring("r-".Length);
+                    prefix = "r";
+                }
+                else if (biocondaName.StartsWith("perl-"))
+                {
+                    biocondaName = biocondaName.Substring("perl-".Length);
+                    prefix = "perl";
+                }
+
+
+                namesFromBioConda.Add(new Tuple<string, string>(biocondaName, prefix));
+            }
+
+            GenerateCSVFileFromTuple(GenerateListOfIntersectingPackagesBetweenBiocondaAndBiotools(namesFromBiotools, namesFromBioConda));
         }
 
        
